@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Project</title> 
+    <!-- google popins --> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,800&family=Poppins:ital,wght@0,400;1,300;1,900&display=swap');
+      </style>
+    <!-- add css file --> 
+    <link rel="stylesheet" href="./indexr.css">
+    <!-- fontawesom-kit -->
+    <script src="https://kit.fontawesome.com/27a2ff73a7.js" crossorigin="anonymous"></script>   
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+
+    <!-- Demo styles -->
+    <style>
+      /* html,
+      body {
+        position: relative;
+        height: 100%;
+      } */
+
+      /* body {
+        background: #eee;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+      } */
+
+      .swiper-container {
+        width: 100%;
+        height: 600px;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+</head>
+<body>  
+  <div class="container">
+    <!-- header section start -->  
+    <header>
+        <div class="header-2">
+            
+            <div class="logo">
+              <a href="indexr.html"><img src="assets/img-logo2 2023-10-01 122518.png" alt="hjhkjk" style="width: 100px; height: 95px; border-radius: 50%; margin-top: 10px; margin-left: 20px;"></a>
+            </div>
+            <nav class="navbar">
+                <div class="dropdown"> 
+                    <a href="#" class="manu-bar">Indoor Plants</a> 
+                    <div class="dropdown-content">
+                        <li><a href="Indoor1.html">Succulent Plants</a></li> <br>
+                        <li><a href="Indoor2.html">Air purifire plants</a></li> <br>
+                        <li><a href="Indoor3.html">Ferns</a></li> <br>
+                        <li><a href="Indoor4.html">Palms</a></li> <br>
+                        <li><a href="Indoor5.html">Bamboo Plants</a></li> <br>
+                        <li><a href="Indoor6.html">Money Plants</a></li> <br>
+                    </div>
+                  </div>
+                <div class="dropdown">
+                    <a href="#" class="manu-bar">Outdoor Plants</a>
+                    <div class="dropdown-content">
+                     <li><a href="outdoor1.html">Bonsai</a></li> <br>
+                     <li><a href="outdoor2.html">Rose</a></li>
+                    </div>
+                  </div>
+                <li><a href="plant-combo.html"class="manu-bar">Plant Combos</a></li>
+               <!-- <li> <a href="#" class="manu-bar">Plant Gifting</a></li>
+                <li><a href="#" class="manu-bar">Blog</a></li>  -->
+                <div class="icon">
+                  <a href="addto_cart.html"><span><i class="fa-solid fa-cart-shopping"></i></span></a> 
+                  <div class="vertical-line" style="position: relative; height: 25px; width: 1px; background-color: black;"></div>
+                <a href="User_signup.html"><span><i class="fa-solid fa-user"></i></span></a>
+                </div> 
+                <!-- <div class="search">
+                  <form action="" class="search-box" style="width: 450px; height: 30px; display: flex;">
+                    <input type="search" id="search" placeholder="Search here....." >
+                    <label for="search" class="#"><span><i class="fa-solid fa-magnifying-glass"></i></span></label>
+                  </form> 
+                </div> -->
+            </nav>  
+            
+        </div>
+    </header>
+
+    <!-- header section end -->  
+
+
+    <!-- home section start -->   
+
+    <body>
+        <!-- Swiper -->
+        <div class="swiper-container mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="https://picsum.photos/id/400/1500/500" alt=""></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/id/152/1500/500" alt=""></div>
+            <div class="swiper-slide"><img src="assets/slide-3-20231001-WA0013.jpg" alt=""></div>
+            
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+    
+        <!-- Swiper JS -->
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+        <!-- Initialize Swiper -->
+        <script>
+          var swiper = new Swiper(".mySwiper", {
+            spaceBetween: 30,
+            centeredSlides: true,
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+            },
+            pagination: {
+              el: ".swiper-pagination",
+              clickable: true,
+            },
+            navigation: {
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            },
+          });
+        </script>
+      </body>
+    
+     <div class="plant-text">
+        <h1>Online Plant Nursery</h1> 
+
+         <br>
+        <p>We at Virtual Greenery - the online plant nursery strive every day to deliver top-quality natural live plants across India. With an aim to make this planet greener and reduce its carbon footprint, we intend to increase the adoption of gardening in every Indian household. Depending upon the user requirement and space available, We have a full-stack selection of indoor and outdoor plants from which one can choose and buy online. Happiness is what is required every day. Adopting Plants is a new and greener lifestyle we inspire to.</p>
+
+     </div> 
+
+     <div class="card-heading" style="text-align: center;">
+        <h1>Best Selling Indoor Plants</h1> 
+
+     </div> 
+
+     <div class="sweper-card">
+        <div class="card-content"> 
+          <!-- card-1 -->
+            <div class="card">
+                <div class="img-card">
+                    <img src="assets/IMG-20231001-WA0010.jpg" alt="aa">
+                </div> 
+                <strike>₹800</strike>
+                <p>₹650</p>
+                <h2>French Lavender</h2>  
+                <button style="height: 45px; width: 250px; background-color: rgba(255, 68, 0, 0.575); border-radius: 5%;">
+                  <a href="addto_cart.html"><i class="fa-solid fa-cart-shopping" style="color: #fff; ">add to cart</i></a>
+                </button>
+            </div>
+        
+<!-- card-2 -->
+        <div class="card">
+          <div class="img-card">
+              <img src="assets/money-plant.jpg" alt="aa">
+          </div> 
+          <strike>₹700</strike>
+          <p>₹680</p>
+          <h2>Money Plant</h2>  
+          <button style="height: 45px; width: 250px; background-color: rgba(255, 68, 0, 0.575); border-radius: 5%;">
+            <a href="addto_cart.html"><i class="fa-solid fa-cart-shopping" style="color: #fff; ">add to cart</i></a>
+          </button>
+      </div>
+  
+   <!-- card-3 -->
+  <div class="card">
+    <div class="img-card">
+        <img src="assets/rose-plant.webp" alt="aa">
+    </div> 
+    <strike>₹900</strike>
+    <p>₹750</p>
+    <h2>Rose</h2>  
+    <button style="height: 45px; width: 250px; background-color: rgba(255, 68, 0, 0.575); border-radius: 5%;">
+      <a href="addto_cart.html"><i class="fa-solid fa-cart-shopping" style="color: #fff; ">add to cart</i></a>
+    </button>
+</div>
+
+<!-- card-4 -->
+<div class="card">
+  <div class="img-card">
+      <img src="assets/plant-4.webp" alt="aa">
+  </div> 
+  <strike>₹600</strike>
+  <p>₹550</p>
+  <h2>African Violets</h2>  
+  <button style="height: 45px; width: 250px; background-color: rgba(255, 68, 0, 0.575); border-radius: 5%;">
+    <a href="addto_cart.html"><i class="fa-solid fa-cart-shopping" style="color: #fff; ">add to cart</i></a>
+  </button>
+</div>
+ </div> 
+ 
+ <!-- gift section --> 
+ <div class="gifts"> 
+  <br> 
+  <div class="mid-content">
+  <h1>Personalized Plant Gifts</h1>
+  <p>Gift your loved one’s a beautiful plant with their image on pot. </p> <br>
+  <button style="height: 40px; width: 120px; background-color: orangered;border-radius: 10%; color: #fff;"><a href="plant_gift.html" style="color: #fff;">Click here !</a></button>  
+</div>
+  <!-- <div class="right-img">
+    <img src="https://images.pexels.com/photos/5874654/pexels-photo-5874654.jpeg?auto=compress&cs=tinysrgb&w=600" alt="">
+  </div> -->
+ </div>
+   <!-- blog section -->
+   <div class="blog">
+    <h1>From The Blog</h1>  
+    <div class="cards">
+    <!-- card-1 -->
+    <div class="blog-card">
+      <div class="blog-img-card">
+          <img src="assets/blog-img.jpg" alt="aa"> 
+          
+      </div>  <br>
+      <a href="#">11 Easy-to-Grow Plants for Beginners</a> <br>
+     <a href="#"><span>Read More > </span></a>
+  </div> 
+  <!-- card-2 -->
+  <div class="blog-card">
+    <div class="blog-img-card">
+        <img src="assets/chui-mui.jpg" alt="aa"> 
+        
+    </div>  <br>
+    <a href="#">Touch Me Not Plant (Chui Mui Plant) Important Facts and Uses</a> <br>
+   <a href="#"><span>Read More > </span></a>
+</div> 
+<!-- card-3 -->
+<div class="blog-card">
+  <div class="blog-img-card">
+      <img src="assets/rafflesia-flower.jpeg" alt="aa"> 
+      
+  </div>  <br>
+  <a href="#">Rafflesia Arnoldii – Biggest Flower in the World</a> <br>
+ <a href="#"><span>Read More > </span></a>
+</div> 
+</div> 
+<button style="height: 30px; width: 150px; margin-top: 10px; background-color:orangered; color: #fff; border-radius: 10%;">VISIT BLOG</button>
+   </div>
+
+
+
+
+
+    </div> 
+    <!-- home section end  -->  
+
+     <!-- footer section start --> 
+     <div class="footer">
+       <ul>
+         <li><a href="#">Plant by loaction</a></li><br>
+         <li><a href="#">About</a></li> <br>
+         <li><a href="#">Contact</a></li> <br>
+         <li><a href="#">Return Policy</a></li> <br>
+         <li><a href="#">Privacy Policy</a></li> <br>
+         <li><a href="#">Shipping Policy</a></li> <br> 
+       </ul> 
+       <ul>
+         <li><a href="#">Carrier</a></li> <br>
+         <li><a href="#">Track Your Order</a></li> <br>
+         <li><a href="#">FAQS</a></li> <br>
+         <li><a href="#">Offers</a></li> <br>
+         <li><a href="#">Personalized Gift</a></li> <br>
+         <li><a href="#">Refund</a></li>
+       </ul>
+       <div>
+        <li><img src="assets/rose-plant.webp" style="height: 400px; width: 300px; background-color: #f2e0e0;" alt=""></li>
+       </div>
+
+      <ul>
+        <p>Subscribe to our email newsletter for Plant Tips, Gardening Etiquette & amazing selection of our houseplants</p> 
+        <h3>For any queries, email or call us at</h3> <br>
+        <li><a href="#"><span><i class="fa-regular fa-envelope"></i></span></a>support@virtualgreenery.in</li> <br>
+        <li><a href="#"><span><i class="fa-solid fa-phone"></i></span></a>+91 7414014244</li> <br>
+        <div class="foot-icon">
+          <li><a href="#"><span><i class="fa-brands fa-facebook"></i></span></a></li>
+          <li><a href="#"><span><i class="fa-brands fa-twitter"></i></span></a></li>
+          <li><a href="#"><span><i class="fa-brands fa-linkedin"></i></span></a></li>
+          <li><a href="#"><span><i class="fa-brands fa-instagram"></i></span></a></li>
+        </div>
+      </ul>
+     </div>
+
+
+     <!-- footer section end -->
+
+    <!-- js-file add --> 
+    <script src="./indexr.js"></script> 
+  </div>
+</body>
+</html>

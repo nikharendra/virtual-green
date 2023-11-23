@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+  <!-- enternal css file --> 
+  <style>
+      
+      /* Option 2: Import via CSS */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+    :root {
+     --color-grey: #f0f0f0;
+     --color-pink:rgb(254, 187, 189); 
+     --color-blue:rgb(99, 201, 243); 
+     --color-green:rgb(92, 195, 151);
+    } 
+    body{
+      background-color: var(--color-grey);
+      font-family: "Robot", sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+
+      background-image: url("assets/bg5.jpg");
+            background-size: cover;
+            height: 100vh;
+            background-position: center;
+    } 
+    .row{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+    } 
+    .center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+    } 
+    .form-section {
+      box-shadow: 0 0 10px rgb(0, 0, 0, 0.3); 
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      border-radius: 15px;
+    } 
+    .toRight {
+      animation: slideRight 0.5s ease-in-out forwards;
+    }  
+    .toLeft {
+      animation: slideLeft 0.5s ease-in-out forwards;
+    } 
+    .login-form {
+      width: 400px;
+      height: 500px;
+
+    } 
+    .signup-form {
+      width: 400px;
+      height: 500px;
+    } 
+    .switch {
+      color: white;
+      padding: 20px;
+      position: absolute;
+      left: 15px;
+      height: 500px;
+      width: 370px;
+      background: var(--color-pink);
+
+    } 
+    .logo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: fill;
+
+    } 
+    .btn-switch {
+      background: var(--color-pink);
+      color: white;
+      font-size: 1.5rem;
+      border: none;
+      border-radius: 10px;
+      padding: 10px;
+      cursor: pointer;
+    } 
+    .btn-switch:hover {
+      background: var(--color-blue);
+
+    } 
+    .green {
+      background: var(--color-green);
+    } 
+    .form-input {
+      min-width: 250px;
+      height: 15px;
+      border-radius: 15px;
+      border: none;
+      padding: 10px;
+      font-size: 1.2rem;
+    } 
+    .register-link {
+      margin-inline: 5px;
+      color: var(--color-blue);
+      text-decoration: underline;
+      cursor: pointer;
+    } 
+    @keyframes slideRight {
+      0% {
+        transform: translateX(0);
+        background: var(--color-pink);
+      } 
+      100% {
+        transform: translateX(400px);
+        background: var(--color-green);
+      }
+    } 
+    @keyframes slideLeft {
+      0% {
+        transform: translateX(400px);
+        background: var(--color-green);
+      } 
+      100% {
+        transform: translateX(0px);
+        background: var(--color-pink);
+      }
+    } 
+    
+
+
+  </style>
+</head>
+<body>
+   <div class="form-section">
+    <div class="switch" id="switch">
+       <div class="row">
+        <img src="assets/img-logo2 2023-10-01 122518.png" alt="logo logo" class="logo"/>
+        <h1>Virtual Greenery</h1>
+
+       </div> 
+       <h3>what's new?</h3> 
+       <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
+    </div> 
+    
+    <div class="login-form center"> 
+      <h1>Sign Up</h1> 
+      <label for="">Email:</label> 
+      <input type="text" class="form-input" />
+      <label for="">Password:</label> 
+      <input type="password" class="form-input" />
+      <label for="">Password repeat:</label> 
+      <input type="password" class="form-input" /> 
+      <button class="btn-switch green">Sign Up</button> 
+      <p>
+        Already have an acount?<span class="register-link" id="login">Login</span>
+      </p>
+    </div> 
+    <div class="signup-form center"> 
+      <h1>Login</h1> 
+      <label for="">Email:</label> 
+      <input type="text" class="form-input" /> 
+        <label for="">Password:</label> 
+        <input type="password" class="form-input" />
+        <button class="btn-switch">Login</button> 
+        <p>
+          Don't have acount yet?<span class="register-link" id="signup">Register</span>
+        </p>
+    </div>
+
+
+   </div>
+
+<!-- js-file  -->
+
+<script src="User_signup.js"></script>
+<script>
+  const express = require('express');
+const mysql = require('mysql');
+
+const app = express();
+
+// MySQL connection configuration
+const db = mysql.createConnection({
+  host: 'localhost', // Your MySQL host
+  user: 'username', // Your MySQL username
+  password: 'password', // Your MySQL password
+  database: 'your_database' // Your MySQL database name
+});
+
+// Connect to MySQL
+db.connect((err) => {
+  if (err) {
+    throw err;
+  }
+  console.log('MySQL connected');
+});
+
+// Middleware to parse JSON data
+app.use(express.json());
+
+// API endpoints for user registration
+app.post('/register', (req, res) => {
+  const { email, password } = req.body;
+
+  // Check if email already exists
+  const checkIfExistsQuery = `SELECT * FROM users WHERE email = ?`;
+  db.query(checkIfExistsQuery, [email], (err, result) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else if (result.length > 0) {
+      res.status(400).json({ message: 'Email already exists' });
+    } else {
+      // Insert new user
+      const insertUserQuery = `INSERT INTO users (email, password) VALUES (?, ?)`;
+      db.query(insertUserQuery, [email, password], (err) => {
+        if (err) {
+          res.status(500).json({ error: err.message });
+        } else {
+          res.status(201).json({ message: 'User registered successfully' });
+        }
+      });
+    }
+  });
+});
+
+// API endpoint for user login
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+
+  // Check if email and password match
+  const loginUserQuery = `SELECT * FROM users WHERE email = ? AND password = ?`;
+  db.query(loginUserQuery, [email, password], (err, result) => {
+    if (err) {
+      res.status(500).json({ error: err.message });
+    } else if (result.length > 0) {
+      res.status(200).json({ message: 'Login successful' });
+    } else {
+      res.status(401).json({ message: 'Invalid credentials' });
+    }
+  });
+});
+
+// Start server
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+</script>
+<script src="server.js"></script>
+<script>
+  let login = document.getElementById('login');
+ let signup = document.getElementById('signup');
+ let shade = document.getElementById('switch'); 
+
+ login.addEventListener('click', function(){
+     shade.classList.remove('toRight');
+     shade.classList.add('toLeft');
+ }) ;
+  
+ signup.addEventListener('click', function(){
+     shade.classList.remove('toLeft');
+     shade.classList.add('toRight');
+ }) ;
+  
+
+
+
+
+</script>
+
+</body>
+</html>
